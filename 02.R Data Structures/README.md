@@ -367,39 +367,142 @@ for(x in multiarray){
 ```
 
 ## R Data Frames
+Data Frames are data displayed in a format as a table.
 
+Data Frames can have different types of data inside it. While the first column can be character, the second and third can be numeric or logical. However, each column should have the same type of data.
+
+Use the data.frame() function to create a data frame
 ```
+# Create a data frame
+Data_Frame <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+
+# Print the data frame
+Data_Frame
+```
+- Use the summary() function to summarize the data from a Data Frame:
+```
+summary(Data_Frame)
+```
+- Use single brackets [ ], double brackets [[ ]] or $ to access columns from a data frame:
+```
+Data_Frame[1]
+
+Data_Frame[["Training"]]
+
+Data_Frame$Training
+```
+- Use the rbind() function to add new rows in a Data Frame:
+```
+# Add a new row
+New_row_DF <- rbind(Data_Frame, c("Strength", 110, 110))
+
+# Print the new row
+New_row_DF
+```
+- Use the cbind() function to add new columns in a Data Frame:
+```
+# Add a new column
+New_col_DF <- cbind(Data_Frame, Steps = c(1000, 6000, 2000))
+
+# Print the new column
+New_col_DF
+```
+
+- Use the c() function to remove rows and columns in a Data Frame:
+```
+# Remove the first row and column
+Data_Frame_New <- Data_Frame[-c(1), -c(1)]
+
+# Print the new data frame
+Data_Frame_New
+```
+
+- Use the dim() function to find the amount of rows and columns in a Data Frame:
+```
+dim(Data_Frame)
+```
+
+- use the ncol() function to find the number of columns and nrow() to find the number of rows:
+```
+ncol(Data_Frame)
+nrow(Data_Frame)
+```
+
+- Use the length() function to find the number of columns in a Data Frame (similar to ncol()):
+```
+length(Data_Frame)
+```
+
+- Use the rbind() function to combine two or more data frames in R vertically:
+```
+New_Data_Frame <- rbind(Data_Frame1, Data_Frame2)
+New_Data_Frame
+```
+
+- use the cbind() function to combine two or more data frames in R horizontally:
+```
+New_Data_Frame1 <- cbind(Data_Frame3, Data_Frame4)
+New_Data_Frame1
 ```
 
 
-
+## R Factors
+Factors are used to categorize data. Examples of factors are:
+- Demography: Male/Female
+- Music: Rock, Pop, Classic, Jazz
+- Training: Strength, Stamina
+To create a factor, use the factor() function and add a vector as argument:
 ```
+# Create a factor
+music_genre <- factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz"))
+
+# Print the factor
+music_genre
+```
+You can see from the example above that that the factor has four levels (categories): Classic, Jazz, Pop and Rock.
+
+To only print the levels, use the levels() function:
+```
+music_genre <- factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz"))
+
+levels(music_genre)
+```
+You can also set the levels, by adding the levels argument inside the factor() function:
+```
+music_genre <- factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz"), levels = c("Classic", "Jazz", "Pop", "Rock", "Other"))
+
+levels(music_genre)
+
+# find out how many items there are in the factor
+length(music_genre)
 ```
 
-
-
+#### Access Factors/Change Item Value
+- To access the items in a factor, refer to the index number, using [] brackets:
 ```
+music_genre <- factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz"))
+
+music_genre[3]
 ```
-
-
-
+- To change the value of a specific item, refer to the index number:
 ```
+music_genre <- factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz"))
+
+music_genre[3] <- "Pop"
+
+music_genre[3]
 ```
+Note that you cannot change the value of a specific item if it is not already specified in the factor. The following example will produce an error:
 
-
-
+However, if you have already specified it inside the levels argument, it will work:
 ```
+music_genre <- factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz"), levels = c("Classic", "Jazz", "Pop", "Rock", "Opera"))
+
+music_genre[3] <- "Opera"
+
+music_genre[3]
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
