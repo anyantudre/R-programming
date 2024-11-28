@@ -1,13 +1,16 @@
-# R-programming
+# Materials for learning R programming
+![](https://github.com/ANYANTUDRE/R-programming/blob/main/img/R_logo.png)
 
 ## What is R?
-R is a programming language, often used for statistical computing and graphical presentation to analyze and visualize data.
+R is a **programming language** used for statistical computing and graphical presentation to analyze and visualize data.
 
 ## Why Use R?
-- It is a great resource for data analysis, data visualization, data science and machine learning
-- It provides many statistical techniques (such as statistical tests, classification, clustering and data reduction)
-- It is easy to draw graphs in R, like pie charts, histograms, box plot, scatter plot, etc++
-- It works on different platforms (Windows, Mac, Linux)
-- It is open-source and free
-- It has a large community support
-- It has many packages (libraries of functions) that can be used to solve different problems
+- It is a **great resource** for:
+    - **Data analysis:** providing many statistical techniques such as statistical tests, classification, clustering and data reduction...
+    - **Data visualization:** allows to easily draw graphs, like pie charts, histograms, box plot, scatter plot, etc...
+    - **Data science and Machine Learning**.
+- It is open-source, free and works on **different platforms** (Windows, Mac, Linux),
+- It has **many packages** (libraries of functions) that can be used to solve different problems and has a **large community support**.
+
+## Ressources:
+- [W3 School Tutorial](https://www.w3schools.com/r/)
